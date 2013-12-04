@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Cryptopay::VERSION
   spec.authors       = ["vadim"]
   spec.email         = ["just.zimer@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = 'Gem for cryptopay.me API'
+  spec.summary       = ''
   spec.homepage      = ""
   spec.license       = "MIT"
 
