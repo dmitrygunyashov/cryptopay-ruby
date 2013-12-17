@@ -20,7 +20,9 @@ module Cryptopay
         return JSON.parse response
 
       rescue => e
-        raise Exception,JSON.parse(e.response)
+        error = Cryptopay::Error.new "#{e.message} (#{e.class})"
+        error.errors = JSON.parse(e.response)
+        raise error
       end
     end
 

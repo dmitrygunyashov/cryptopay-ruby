@@ -4,6 +4,7 @@ require 'net/http'
 require 'cryptopay/net'
 
 module Cryptopay
+  class Error < Exception; attr_accessor :errors; end
   # API Key
   mattr_accessor :key
 
