@@ -27,7 +27,15 @@ invoice = Cryptopay.new_invoice id: 'test',
                                 currency: 'GBP',
                                 description: 'test description',
                                 success_redirect_url: 'https://cryptopay.me',
-                                callback_url: 'https://cryptopay.me'
+                                callback_url: 'https://cryptopay.me',
+                                callback_params: {
+                                         validations_hash: "SUPERSECRETHASH",
+                                         array_params: ['test1', 'test2' 'test3'],
+                                         nested_hash: {
+                                             validations_hash: "other",
+                                             array_params_again: ['test1', 'test2' 'test3']
+                                         }
+                                     }
 ```
 now invoice object is hash with next attributes
 ```ruby
@@ -37,7 +45,14 @@ status: 'pending',
 btc_price: 0.0055,
 btc_address: '16KcaBuNbHXhTweJspFkSku2nmvvyV8NoL',
 short_id: 'CF47603E',
-callback_params: nil,
+callback_params: {
+    validations_hash: "SUPERSECRETHASH",
+    array_params: ['test1', 'test2' 'test3'],
+    nested_hash: {
+        validations_hash: "other",
+        array_params_again: ['test1', 'test2' 'test3']
+   }
+},
 id: 'test',
 price: 2.32,
 currency: 'GBP',
