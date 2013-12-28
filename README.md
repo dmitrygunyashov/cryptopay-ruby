@@ -5,7 +5,7 @@ gem install cryptopay
 ```
 
 
-or your Gemfile:
+or in your Gemfile:
 
 ```ruby
 gem 'cryptopay'`
