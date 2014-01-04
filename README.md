@@ -1,3 +1,9 @@
+# Cryptopay
+Easily accept Bitcoin payment with Cryptopay Payment API
+
+Before you will be able to start using this gem, you will need to obtain an API key in Account - Merchant Tools - Settings.
+
+
 # Installation
 
 ```ruby
@@ -29,8 +35,8 @@ invoice = Cryptopay.new_invoice id: 'test',
                                 success_redirect_url: 'https://cryptopay.me',
                                 callback_url: 'https://cryptopay.me',
                                 callback_params: {
-                                         validations_hash: "SUPERSECRETHASH",
-                                         array_params: ['test1', 'test2' 'test3'],
+                                         customer_id: "12389",
+                                         array_params: ['Black', '36' 'XL'],
                                          nested_hash: {
                                              validations_hash: "other",
                                              array_params_again: ['test1', 'test2' 'test3']
@@ -60,14 +66,14 @@ created_at: 1387305401,
 valid_till: 1387306001
 ```
 
-You can save `uuid` and use this later for update invoice status:
+You can save `uuid` and use this later to update invoice status:
 ```ruby
 Cryptopay.invoice invoice['uuid']
 ```
 
 
 # Errors handle
-classic ruby-way
+Error handling is done in classic ruby way:
 ```ruby
  begin
     params = Cryptopay.new_invoice id: 'test',
