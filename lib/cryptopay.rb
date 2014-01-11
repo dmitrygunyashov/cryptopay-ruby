@@ -2,6 +2,7 @@ require "cryptopay/version"
 require 'rest_client'
 require 'net/http'
 require 'cryptopay/net'
+require 'json'
 
 module Cryptopay
   class Error < Exception; attr_accessor :errors; end
