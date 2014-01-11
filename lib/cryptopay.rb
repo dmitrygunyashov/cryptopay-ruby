@@ -6,7 +6,14 @@ require 'cryptopay/net'
 module Cryptopay
   class Error < Exception; attr_accessor :errors; end
   # API Key
-  mattr_accessor :key
+  @@api_key = ''
+  def self.key=(new_key)
+    @@api_key = new_key
+  end
+
+  def self.key
+    @@api_key
+  end
 
   def self.new_invoice(params = {})
     sanity_check!
