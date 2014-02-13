@@ -63,7 +63,8 @@ id: 'test',
 price: 2.32,
 currency: 'GBP',
 created_at: 1387305401,
-valid_till: 1387306001
+valid_till: 1387306001,
+url: "http://cryptopay.me/orders/cf47603e-8e86-413d-86f2-0cf94fe05683/d"
 ```
 
 You can save `uuid` and use this later to update invoice status:
